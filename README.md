@@ -1,4 +1,5 @@
 ![LyBerry](/docs/vectorpaint.png)
+
 LyBerry lets you store, view, edit, convert, and share ALL of your documents.
 ## Core Features
 * Upload documents of any format
