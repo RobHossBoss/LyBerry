@@ -14,6 +14,20 @@ LyBerry lets you store, view, edit, convert, and share ALL of your documents.
 * Smart Organization (Find author, title, publication date, etc. automatically.)
 * Mobile App
 
+# Installing
+- Install nodejs `sudo apt-get install nodejs`
+- Install npm `sudo apt-get install npm`
+
+You'll need the following packages:
+
+- `npm install --global webpack`
+- `npm install --global webpack-dev-server`
+- `npm install --global karma-cli`
+- `npm install --global protractor`
+- `npm install --global typings`
+- `npm install --global typescript`
+- 
+
 ## Sugested Features - add your suggestions below
 
 ## Resources:
