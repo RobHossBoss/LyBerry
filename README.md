@@ -26,7 +26,6 @@ You'll need the following packages:
 - `npm install --global protractor`
 - `npm install --global typings`
 - `npm install --global typescript`
-- 
 
 ## Sugested Features - add your suggestions below
 
