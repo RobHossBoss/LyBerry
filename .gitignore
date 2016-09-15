@@ -1,4 +1,4 @@
-node_modules/
-typings/
-src/*.js
-src/*.js.map
+node/node_modules/
+node/typings/
+node/src/*.js
+node/src/*.js.map
