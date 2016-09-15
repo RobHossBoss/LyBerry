@@ -2,3 +2,4 @@ node/node_modules/
 node/typings/
 node/src/*.js
 node/src/*.js.map
+node/npm-debug.log
