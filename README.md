@@ -38,4 +38,7 @@ You'll need the following packages:
 2. Use the [web interface](http://lyberry.com) or mobile app to begin uploading documents and images for processing.
 3. ... 
 
-
+## Repo File Structure:
+- `docs` - Useful documentation
+- `node` - Core app code
+- `landing` - Landing page HTML 
