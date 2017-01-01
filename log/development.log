@@ -2461,3 +2461,337 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 344ms (Views: 309.9ms | ActiveRecord: 27.5ms)
 
 
+Started GET "/" for ::1 at 2016-12-31 21:28:10 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by SiteController#index as HTML
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (13.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (211.2ms)
+Completed 200 OK in 12046ms (Views: 11875.0ms | ActiveRecord: 135.7ms)
+
+
+Started GET "/login" for ::1 at 2016-12-31 21:28:29 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (69.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (3.8ms)
+Completed 200 OK in 282ms (Views: 276.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for ::1 at 2016-12-31 21:28:45 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aS1yCA8hB3+WafYVjFNbyiFKnqfIsAcK6CYMexXqojJH+eJyf7CmBLWjwVOt5NfVpzjKf9rbvK/y4lDQBXh2pw==", "session"=>{"email"=>"thedubiouslimabean@hotmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'thedubiouslimabean@hotmail.com' LIMIT 1[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (3.9ms)
+Completed 200 OK in 474ms (Views: 336.7ms | ActiveRecord: 13.3ms)
+
+
+Started POST "/login" for ::1 at 2016-12-31 21:29:00 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y2fTTaeI2ITjWyoOuVEafmakpDbX/Ina2ykMBfjKH+hktulxWEkj+vL9HX8KL4JzM/WkegYLYUX6TBPRww5Bng==", "session"=>{"email"=>"thedubiouslimabean@hotmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'thedubiouslimabean@hotmail.com' LIMIT 1[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 95ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for ::1 at 2016-12-31 21:29:01 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_header.html.erb (4.6ms)
+Completed 200 OK in 228ms (Views: 219.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for ::1 at 2016-12-31 21:29:05 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_header.html.erb (3.9ms)
+Completed 200 OK in 185ms (Views: 170.4ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/users/1" for ::1 at 2016-12-31 21:29:06 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_header.html.erb (4.1ms)
+Completed 200 OK in 186ms (Views: 181.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for ::1 at 2016-12-31 21:29:07 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_header.html.erb (3.8ms)
+Completed 200 OK in 215ms (Views: 206.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for ::1 at 2016-12-31 21:29:09 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (5.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_header.html.erb (6.1ms)
+Completed 200 OK in 217ms (Views: 211.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for ::1 at 2016-12-31 21:29:11 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_header.html.erb (4.1ms)
+Completed 200 OK in 238ms (Views: 233.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1" for ::1 at 2016-12-31 21:29:11 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_header.html.erb (4.5ms)
+Completed 200 OK in 246ms (Views: 234.2ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/users/1" for ::1 at 2016-12-31 21:29:13 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_header.html.erb (4.5ms)
+Completed 200 OK in 230ms (Views: 221.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for ::1 at 2016-12-31 21:29:14 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_header.html.erb (3.8ms)
+Completed 200 OK in 202ms (Views: 196.3ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/logout" for ::1 at 2016-12-31 21:35:38 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WGDozn3KgkXd2FB1fwiv+AmOCNmz/k9WtIKn8+mJqn/3sdLyggt5O8x+ZwTMdjf1XN8IlWIJp8mV57gn0k30CQ=="}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 14ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-12-31 21:35:38 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (21.7ms)
+  [1m[36mUser Load (12.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (73.3ms)
+Completed 200 OK in 364ms (Views: 329.4ms | ActiveRecord: 26.1ms)
+
+
+Started POST "/login" for ::1 at 2016-12-31 21:35:51 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m+qTHhr7grU9V0Cpei2rRNWbfobwZpz5oZQ4LnjgZhA0O6ki5Tp5yyzxd9jJUzNJgMp+yiGRdGaA8Sf6QyQ4Zg==", "session"=>{"email"=>"thedubiouslimabean@hotmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'thedubiouslimabean@hotmail.com' LIMIT 1[0m
+Redirected to http://localhost:3000/my-library
+Completed 302 Found in 179ms (ActiveRecord: 33.8ms)
+
+
+Started GET "/my-library" for ::1 at 2016-12-31 21:35:51 -0500
+Processing by SiteController#library as HTML
+  Rendering site/library.html.erb within layouts/application
+  Rendered site/library.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_header.html.erb (21.0ms)
+Completed 200 OK in 406ms (Views: 402.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/my-library" for ::1 at 2016-12-31 21:43:45 -0500
+Processing by SiteController#library as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering site/library.html.erb within layouts/application
+  Rendered site/library.html.erb within layouts/application (16.5ms)
+  Rendered layouts/_header.html.erb (4.4ms)
+Completed 200 OK in 526ms (Views: 402.1ms | ActiveRecord: 29.6ms)
+
+
+Started GET "/notes/new" for ::1 at 2016-12-31 21:43:56 -0500
+Processing by NotesController#new as HTML
+  Rendering notes/new.html.erb within layouts/application
+  Rendered notes/_form.html.erb (34.5ms)
+  Rendered notes/new.html.erb within layouts/application (39.4ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_header.html.erb (18.6ms)
+Completed 200 OK in 421ms (Views: 320.6ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/login" for ::1 at 2016-12-31 21:44:07 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (7.5ms)
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_header.html.erb (10.3ms)
+Completed 200 OK in 336ms (Views: 327.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/my-library" for ::1 at 2016-12-31 21:44:23 -0500
+Processing by SiteController#library as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering site/library.html.erb within layouts/application
+  Rendered site/library.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_header.html.erb (2.3ms)
+Completed 200 OK in 234ms (Views: 229.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/shelves/new" for ::1 at 2016-12-31 21:52:31 -0500
+Processing by ShelvesController#new as HTML
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `has_one' for main:Object):
+  
+app/models/shelf.rb:2:in `<top (required)>'
+app/controllers/shelves_controller.rb:17:in `new'
+  Rendering /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.2ms)
+  Rendering /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendering /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (60.6ms)
+Started GET "/my-library" for ::1 at 2016-12-31 21:52:58 -0500
+Processing by SiteController#library as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 29.4ms)
+
+
+  
+NoMethodError (undefined method `belongs_to' for main:Object):
+  
+app/models/shelf.rb:2:in `<top (required)>'
+app/controllers/site_controller.rb:7:in `library'
+  Rendering /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.4ms)
+  Rendering /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.5ms)
+  Rendering /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.8ms)
+Started GET "/my-library" for ::1 at 2016-12-31 21:53:06 -0500
+Processing by SiteController#library as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `belongs_to' for main:Object):
+  
+app/models/shelf.rb:2:in `<top (required)>'
+app/controllers/site_controller.rb:7:in `library'
+  Rendering /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.3ms)
+  Rendering /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.7ms)
+  Rendering /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.3ms)
+Started GET "/my-library" for ::1 at 2016-12-31 21:54:08 -0500
+Processing by SiteController#library as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 7.1ms)
+
+
+  
+NameError (uninitialized constant ApplicationRecord::Base):
+  
+app/models/shelf.rb:1:in `<top (required)>'
+app/controllers/site_controller.rb:7:in `library'
+  Rendering /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.3ms)
+  Rendering /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendering /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /home/robert/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.8ms)
+Started GET "/my-library" for ::1 at 2016-12-31 21:54:28 -0500
+Processing by SiteController#library as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering site/library.html.erb within layouts/application
+  [1m[36mShelf Load (11.0ms)[0m  [1m[34mSELECT `shelves`.* FROM `shelves` WHERE (user_id = 1)[0m
+  Rendered site/library.html.erb within layouts/application (18.0ms)
+  Rendered layouts/_header.html.erb (3.2ms)
+Completed 200 OK in 441ms (Views: 355.7ms | ActiveRecord: 15.2ms)
+
+
+Started GET "/shelves/new" for ::1 at 2016-12-31 21:54:36 -0500
+Processing by ShelvesController#new as HTML
+  Rendering shelves/new.html.erb within layouts/application
+  Rendered shelves/_form.html.erb (18.2ms)
+  Rendered shelves/new.html.erb within layouts/application (22.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_header.html.erb (4.0ms)
+Completed 200 OK in 223ms (Views: 194.3ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/shelves" for ::1 at 2016-12-31 21:54:48 -0500
+Processing by ShelvesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Hzb2/uM3MeCBy2i9QIGs0YvWkVf4EuqanJq1QUmLQjV0NuKbYngtyXTq2S5NZEihWHXJPHcwU9sZXeujRySyIA==", "shelf"=>{"title"=>"my shelf", "description"=>"this is my first shelf"}, "commit"=>"Create Shelf"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (4.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO `shelves` (`title`, `description`, `user_id`, `created_at`, `updated_at`) VALUES ('my shelf', 'this is my first shelf', 1, '2017-01-01 02:54:48', '2017-01-01 02:54:48')[0m
+  [1m[35m (20.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/shelves/1
+Completed 302 Found in 93ms (ActiveRecord: 27.1ms)
+
+
+Started GET "/shelves/1" for ::1 at 2016-12-31 21:54:48 -0500
+Processing by ShelvesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShelf Load (0.7ms)[0m  [1m[34mSELECT  `shelves`.* FROM `shelves` WHERE `shelves`.`id` = 1 LIMIT 1[0m
+  Rendering shelves/show.html.erb within layouts/application
+  Rendered shelves/show.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_header.html.erb (11.5ms)
+Completed 200 OK in 320ms (Views: 304.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/my-library" for ::1 at 2016-12-31 21:54:59 -0500
+Processing by SiteController#library as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering site/library.html.erb within layouts/application
+  [1m[36mShelf Load (0.9ms)[0m  [1m[34mSELECT `shelves`.* FROM `shelves` WHERE (user_id = 1)[0m
+  Rendered site/library.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 183ms (Views: 175.0ms | ActiveRecord: 1.3ms)
+
+

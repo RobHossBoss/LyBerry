@@ -25,6 +25,7 @@ class ShelvesController < ApplicationController
   # POST /shelves.json
   def create
     @shelf = Shelf.new(shelf_params)
+    @shelf.user_id = current_user.id
 
     respond_to do |format|
       if @shelf.save
