@@ -9,7 +9,11 @@ VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   
     has_secure_password
 
-  
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                  BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
   # Returns the Gravatar for the given user.
   def self.gravatar
     gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
