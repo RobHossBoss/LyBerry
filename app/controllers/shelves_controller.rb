@@ -29,7 +29,7 @@ class ShelvesController < ApplicationController
 
     respond_to do |format|
       if @shelf.save
-        format.html { redirect_to @shelf, notice: 'Shelf was successfully created.' }
+        format.html { redirect_to "my-library", notice: 'Shelf was successfully created.' }
         format.json { render :show, status: :created, location: @shelf }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class ShelvesController < ApplicationController
   def update
     respond_to do |format|
       if @shelf.update(shelf_params)
-        format.html { redirect_to @shelf, notice: 'Shelf was successfully updated.' }
+        format.html { redirect_to "my-library", notice: 'Shelf was successfully updated.' }
         format.json { render :show, status: :ok, location: @shelf }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class ShelvesController < ApplicationController
   def destroy
     @shelf.destroy
     respond_to do |format|
-      format.html { redirect_to shelves_url, notice: 'Shelf was successfully destroyed.' }
+      format.html { redirect_to "/my-library", notice: 'Shelf was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

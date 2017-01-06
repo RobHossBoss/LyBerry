@@ -17,11 +17,13 @@ ActiveRecord::Schema.define(version: 20161231233335) do
     t.integer  "user_id"
     t.integer  "shelf_id"
     t.string   "file"
+    t.string   "download"
     t.string   "preview"
+    t.string   "preview_path"
     t.string   "format"
     t.string   "size"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "notes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

@@ -5,7 +5,9 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.integer :user_id
       t.integer :shelf_id
       t.string :file
+      t.string :download
       t.string :preview
+      t.string :preview_path
       t.string :format
       t.string :size
       
