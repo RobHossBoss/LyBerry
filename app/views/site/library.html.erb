@@ -1,64 +1,32 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
     <% @shelves.each do |shelf| %>
-      <tr>
-        <td><%= shelf.title %></td>
-        <td><%= shelf.description %></td>
-        <td><%= shelf.user_id %></td>
+      <div class="row">
+        <h1><%= shelf.title %></h1>
+        <p><%= shelf.description %></p>
+        <% @items.where("shelf_id = ?", shelf.id).each do |item| %>
+          <div class="col-sm-3">
+            <a href="<%= item.download %>"><img src="<%= item.preview %>"></a>
+            <h3><%= item.title.truncate(27) %></h3>
+            <table>
+              <tr>
+                <td><%= link_to 'Edit', edit_item_path(item) %></td>
+                <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            </table>
+          </div>
+        <% end %>
         <td><%= link_to 'Show', shelf %></td>
         <td><%= link_to 'Edit', edit_shelf_path(shelf) %></td>
         <td><%= link_to 'Destroy', shelf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      </div>
     <% end %>
-  </tbody>
-</table>
 
-<table>
-
-  <tbody>
-    <% @items.each do |item| %>
-      <tr>
-        <a href="<%= item.download %>"><img src="<%= item.preview %>"></a>
-        <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @notes.each do |note| %>
-      <tr>
-        <td><%= note.title %></td>
-        <td><%= link_to 'Show', note %></td>
-        <td><%= link_to 'Edit', edit_note_path(note) %></td>
-        <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  
 
 <%= link_to 'New Shelf', new_shelf_path %>
-<%= link_to 'New Note', new_note_path %>
+<%= link_to 'New Notebook', new_notebook_path %>
 <%= link_to 'New File', new_item_path %>
+</div>

@@ -12,7 +12,8 @@
   <% end %>
   
   <%= f.file_field :file %>
-
+      <%= f.label :shelf_id %>
+  <%= f.select(:shelf_id, options_for_select(@shelf_options)) %>
   <div class="actions">
     <%= f.submit %>
   </div>

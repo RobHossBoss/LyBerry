@@ -1,0 +1,27 @@
+<%= form_for(notebook) do |f| %>
+  <% if notebook.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(notebook.errors.count, "error") %> prohibited this notebook from being saved:</h2>
+
+      <ul>
+      <% notebook.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :shelf_id %>
+  <%= f.select(:shelf_id, options_for_select(@shelf_options)) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Notebooks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Shelf</th>
+      <th>User</th>
+      <th>Cover</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @notebooks.each do |notebook| %>
+      <tr>
+        <td><%= notebook.title %></td>
+        <td><%= notebook.shelf_id %></td>
+        <td><%= notebook.user_id %></td>
+        <td><%= notebook.cover %></td>
+        <td><%= link_to 'Show', notebook %></td>
+        <td><%= link_to 'Edit', edit_notebook_path(notebook) %></td>
+        <td><%= link_to 'Destroy', notebook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Notebook', new_notebook_path %>

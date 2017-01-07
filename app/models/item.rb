@@ -19,18 +19,18 @@ class Item < ApplicationRecord
   end
   
   def get_pdf_preview(width)
-    require 'RMagick'
-    Magick.limit_resource("memory", "20MB")
-    pdf = Magick::ImageList.new(self.file+"[0]")[0]
-    pdf.resize(width)
-    pdf.background_color = "white"
-    pdf.flatten_images
-    pdf.write(self.preview_path)
-    
-    #system("convert -alpha off -cache 20 #{self.file}[0] -resize 200 -background white -flatten #{self.preview_path}")
+    #require 'RMagick'
+    #Magick.limit_resource("memory", 20)
+    #pdf = Magick::ImageList.new(self.file+"[0]")[0]
+    #pdf.resize(width)
+    #pdf.background_color = "white"
+    #pdf.flatten_images
+    #pdf.write(self.preview_path)
+
+    system("convert -alpha off -cache 20 #{self.file}[0] -resize 200 -background white -flatten #{self.preview_path}")
   end
   
-  def get_doc_preview(width, height)
+  def get_doc_preview(width)
     self.conv_doc_to_pdf
     self.get_pdf_preview(width)
     File.delete(self.file+".pdf")
@@ -38,7 +38,7 @@ class Item < ApplicationRecord
   
   def conv_doc_to_pdf
     require 'libreconv'
-    Libreconv.convert(self.file, self.file+"pdf")
+    Libreconv.convert(self.file, self.file+'.pdf')
   end
   
 
@@ -53,8 +53,8 @@ class Item < ApplicationRecord
       #get preview image of epub
     elsif self.format == "application/x-mobipocket-ebook"
       # get preview image of epub
-    elsif self.format == "application/vnd.openxmlformats-officedocument.wordprocessingml.document" || self.format == "application/msword"
-      self.get_doc_preview(width, height)
+    elsif self.format == "application/vnd.openxmlformats-officedocument.wordprocessingml.document" || self.format == "application/msword" || self.format == "application/octet-stream"
+      self.get_doc_preview(width)
     elsif self.format == "audio/mpeg"
       # get preview image
     elsif self.format == "video/mpeg"

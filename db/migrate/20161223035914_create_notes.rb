@@ -4,7 +4,7 @@ class CreateNotes < ActiveRecord::Migration[5.0]
       t.string :title
       t.text :content
       t.integer :user_id
-      t.integer :shelf_id
+      t.integer :notebook_id
 
       t.timestamps
     end

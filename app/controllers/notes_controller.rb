@@ -15,6 +15,10 @@ class NotesController < ApplicationController
   # GET /notes/new
   def new
     @note = Note.new
+    @notebook_options = []
+    Notebook.where("user_id = ?", current_user.id).each do |notebook|
+      @notebook_options.push([notebook.title, notebook.id])
+    end
   end
 
   # GET /notes/1/edit

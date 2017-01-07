@@ -29,7 +29,7 @@ class ShelvesController < ApplicationController
 
     respond_to do |format|
       if @shelf.save
-        format.html { redirect_to "my-library", notice: 'Shelf was successfully created.' }
+        format.html { redirect_to "/my-library", notice: 'Shelf was successfully created.' }
         format.json { render :show, status: :created, location: @shelf }
       else
         format.html { render :new }

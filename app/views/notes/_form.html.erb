@@ -20,6 +20,11 @@
     <%= f.label :content %>
     <%= f.text_area :content %>
   </div>
+  <div class="field">
+    <%= f.label :notebook_id %>
+  <%= f.select(:notebook_id, options_for_select(@notebook_options)) %>
+  </div>
+
 
   <div class="actions">
     <%= f.submit %>

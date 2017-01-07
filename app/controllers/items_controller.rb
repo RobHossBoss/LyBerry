@@ -15,6 +15,10 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
+    @shelf_options = []
+    Shelf.where("user_id = ?", current_user.id).each do |shelf|
+      @shelf_options.push([shelf.title, shelf.id])
+    end
   end
 
   # GET /items/1/edit
@@ -35,6 +39,7 @@ class ItemsController < ApplicationController
     @item.title = uploaded_io.original_filename
     @item.user_id = current_user.id
     @item.format = uploaded_io.content_type
+    @item.shelf_id = params[:item][:shelf_id]
     @item.preview = File.join("uploads", current_user.name, "previews", File.basename(@item.title)+".jpg")
     @item.preview_path = File.join(dir, "previews", File.basename(@item.title)+".jpg")
     File.open(@item.file, 'wb') do |file|
@@ -85,6 +90,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:file)
+      params.require(:item).permit(:file, :shelf_id)
     end
 end
