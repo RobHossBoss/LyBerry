@@ -24,10 +24,15 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    
     @user = User.new(user_params)
-
+    @user.folder_path = Rails.root.join('public', 'uploads', @user.name)
+    @user.folder_download = '/uploads/'+@user.name
     respond_to do |format|
       if @user.save
+        @user.add_mailchimp_subscriber
+        starter_shelf = Shelf.new(title: "My Shelf", description: "Use shelves to organize your library. We made this one for you. Feel free to customize it!", user_id: @user.id )
+        starter_shelf.save
         log_in @user
         format.html { redirect_to "/my-library", notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
@@ -70,6 +75,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :password, :confirm_password, :email)
+      params.require(:user).permit(:name,:last_name, :password, :confirm_password, :email)
     end
 end

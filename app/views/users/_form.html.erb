@@ -1,3 +1,6 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  
 <%= form_for(user) do |f| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
@@ -12,25 +15,31 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.label :name, "First name" %>
+    <%= f.text_field :name ,class: 'form-control'%>
   </div>
   <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+    <%= f.label :last_name, "Last name"%>
+    <%= f.text_field :last_name, class: 'form-control'%>
   </div>
-
   <div class="field">
     <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password ,class: 'form-control'%>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation, "Comfirm password" %>
+    <%= f.password_field :password_confirmation ,class: 'form-control'%>
   </div>
 
+
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Join!", class: 'btn'%>
   </div>
 <% end %>
+</div>
+</div>

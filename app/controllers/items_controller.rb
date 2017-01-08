@@ -31,17 +31,17 @@ class ItemsController < ApplicationController
     require 'fileutils'
     @item = Item.new(item_params)
     uploaded_io = params[:item][:file]
-    dir = Rails.root.join('public', 'uploads', current_user.name)
-    FileUtils::mkdir_p dir
+    
+    FileUtils::mkdir_p current_user.folder_path
   
-    @item.download = File.join("uploads",current_user.name,uploaded_io.original_filename)
-    @item.file = dir.join(uploaded_io.original_filename)
+    @item.download = File.join(current_user.folder_download,uploaded_io.original_filename)
+    @item.file = File.join(current_user.folder_path, uploaded_io.original_filename)
     @item.title = uploaded_io.original_filename
     @item.user_id = current_user.id
     @item.format = uploaded_io.content_type
     @item.shelf_id = params[:item][:shelf_id]
-    @item.preview = File.join("uploads", current_user.name, "previews", File.basename(@item.title)+".jpg")
-    @item.preview_path = File.join(dir, "previews", File.basename(@item.title)+".jpg")
+    @item.preview = File.join(current_user.folder_download, "previews", File.basename(@item.title)+".jpg")
+    @item.preview_path = File.join(current_user.folder_path, "previews", File.basename(@item.title)+".jpg")
     File.open(@item.file, 'wb') do |file|
       file.write(uploaded_io.read)
     end

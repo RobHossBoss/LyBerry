@@ -1,3 +1,138 @@
 // Place all the styles related to the site controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+button {
+  border: none;
+  outline: none;
+}
+
+body {
+  font-family: "PT Sans", sans-serif;
+  background-color: #EEEEEE;
+}
+
+h2 {
+  margin: 100px auto;
+  font-weight: 400;
+  text-align: center;
+}
+
+footer .demo {
+  position: absolute;
+  bottom: 10px;
+  width: 500px;
+  margin: 0 auto;
+}
+footer .demo a {
+  text-align: center;
+  color: #000;
+  text-decoration: none;
+  font-weight: 100;
+  border-bottom: 1px solid #000;
+}
+
+.wrapper {
+  position: absolute;
+  top: 90%;
+  left: 90%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+}
+
+.circle {
+  position: relative;
+  padding: 0;
+  z-index: 98;
+  margin: 0 auto;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  background-color: #3F51B5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  text-align: center;
+}
+.circle img {
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.circle:focus img {
+  -webkit-transform: rotate(405deg);
+          transform: rotate(405deg);
+}
+.circle:hover, .circle:focus {
+  cursor: pointer;
+  background-color: #606fc7;
+  box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.3);
+}
+.circle:focus ~ .subs button:nth-of-type(1) {
+  -webkit-transform: translate(0px, -100px) scale(1);
+          transform: translate(0px, -100px) scale(1);
+  opacity: 1;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+.circle:focus ~ .subs button:nth-of-type(5) {
+  -webkit-transform: translate(-75px, 75px) scale(1);
+          transform: translate(-75px, 75px) scale(1);
+  opacity: 1;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+.circle:focus ~ .subs button:nth-of-type(2) {
+  -webkit-transform: translate(-100px, 0px) scale(1);
+          transform: translate(-100px, 0px) scale(1);
+  opacity: 1;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+}
+.circle:focus ~ .subs button:nth-of-type(3) {
+  -webkit-transform: translate(-75px, -75px) scale(1);
+          transform: translate(-75px, -75px) scale(1);
+  opacity: 1;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+}
+
+.sub-circle {
+  z-index: 0;
+  position: absolute;
+  background-color: #F50057;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  opacity: 0;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+}
+.sub-circle:hover {
+  cursor: pointer;
+  background-color: #606fc7;
+  box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.3);
+}
+
+.subs {
+  left: -20px;
+  top: -50px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  z-index: 0;
+  margin: 0 auto;
+  position: relative;
+}
+

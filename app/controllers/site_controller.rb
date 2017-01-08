@@ -1,6 +1,10 @@
 class SiteController < ApplicationController
   def index
-    render 'index'
+    if logged_in?
+      redirect_to "/my-library"
+    else
+      render "index"
+    end
   end
   def library
     if logged_in?
@@ -10,7 +14,7 @@ class SiteController < ApplicationController
 
       render 'library'
     else
-      redirect_to 'login'
+      redirect_to 'index'
     end
   end
 end

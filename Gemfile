@@ -34,6 +34,7 @@ gem 'epub-parser', '~> 0.2.2'
 gem 'libreconv'
 gem 'rmagick', '~> 2.15', '>= 2.15.4'
 gem "mini_magick"
+gem 'mailchimp-api', require: 'mailchimp'
 
 gem 'grim', '~> 1.2'
 group :development, :test do

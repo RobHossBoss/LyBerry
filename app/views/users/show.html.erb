@@ -2,18 +2,13 @@
 
 <p>
   <strong>Username:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
+  <%= @user.name %> <%= link_to 'Edit', edit_user_path(@user) %>
 </p>
 
 <p>
   <strong>Email:</strong>
-  <%= @user.email %>
+  <%= @user.email %> <%= link_to 'Edit', edit_user_path(@user) %>
+
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<td><%= link_to 'Delete Account', @user, method: :delete, data: { confirm: 'All your entire library will be unavailible. Are you sure you want to delete your account?' } %></td>

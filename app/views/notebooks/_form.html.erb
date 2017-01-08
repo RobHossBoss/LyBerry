@@ -1,3 +1,5 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
 <%= form_for(notebook) do |f| %>
   <% if notebook.errors.any? %>
     <div id="error_explanation">
@@ -12,16 +14,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.label :title, "Notebook title"%>
+    <%= f.text_field :title ,class: 'form-control'%>
   </div>
 
   <div class="field">
-    <%= f.label :shelf_id %>
-  <%= f.select(:shelf_id, options_for_select(@shelf_options)) %>
+    <%= f.label :shelf_id, "What shelf should this go on?" %>
+  <%= f.select(:shelf_id, options_for_select(@shelf_options), {}, {:class => 'form-control'}) %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn'%>
   </div>
 <% end %>
+</div>
+</div>
