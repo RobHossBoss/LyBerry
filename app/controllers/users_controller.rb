@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     @user.folder_download = '/uploads/'+@user.name
     respond_to do |format|
       if @user.save
-        @user.add_mailchimp_subscriber
+        @user.subscribe
         starter_shelf = Shelf.new(title: "My Shelf", description: "Use shelves to organize your library. We made this one for you. Feel free to customize it!", user_id: @user.id )
         starter_shelf.save
         log_in @user

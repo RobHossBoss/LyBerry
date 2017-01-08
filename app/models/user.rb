@@ -20,8 +20,16 @@ VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}"
     image_tag(gravatar_url, alt: user.name, class: "gravatar")
   end
-  def add_mailchimp_subscriber
-    client = Mailchimp::API.new('2cc1d9a1810e3b6a4ff7815d9de3ec95-us14')
-    client.lists.subscribe('d6db07f2b9', {email: self.email}, {'FNAME' => self.name, 'LNAME' => self.last_name})
+
+  def subscribe
+    mailchimp = Gibbon::API.new(Rails.application.secrets.mailchimp_api_key)
+    result = mailchimp.lists.subscribe({
+      :id => Rails.application.secrets.mailchimp_list_id,
+      :email => {:email => self.email},
+      :double_optin => false,
+      :update_existing => true,
+      :send_welcome => true
+    })
+    Rails.logger.info("Subscribed #{self.email} to MailChimp") if result
   end
 end
