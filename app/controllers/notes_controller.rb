@@ -30,10 +30,14 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(note_params)
     @note.user_id = current_user.id
-
+    @note.notebook_id = params[:notebook]
+    @note.preview = File.join(current_user.folder_path, "previews", Notebook.find(@note.notebook_id).title, @note.title+".jpg")
+    @note.download = File.join(current_user.folder_download, "previews", Notebook.find(@note.notebook_id).title, @note.title+".jpg")
+    @note.get_preview
     respond_to do |format|
       if @note.save
-        format.html { redirect_to "/my-library", notice: 'Note was successfully created.' }
+        
+        format.html { redirect_to "/notebooks/"+@note.notebook_id.to_s, notice: 'Note was successfully created.' }
         format.json { render :show, status: :created, location: @note }
       else
         format.html { render :new }

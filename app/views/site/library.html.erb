@@ -5,11 +5,13 @@
     <% @shelves.each do |shelf| %>
       <div class="row">
         <h1><%= shelf.title %></h1>
+        <td><%= link_to 'Show', shelf %></td>
+        <td><%= link_to 'Edit', edit_shelf_path(shelf) %></td>
+        <td><%= link_to 'Destroy', shelf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <p><%= shelf.description %></p>
         <% @items.where("shelf_id = ?", shelf.id).each do |item| %>
           <div class="col-sm-3">
-            <a href="<%= item.download %>"><img src="<%= item.preview %>"></a>
-            <h3><%= item.title.truncate(27) %></h3>
+            <a href="<%= item.download %>"><img src="<%= item.preview %>"><h5><%= item.title.truncate(27) %></h5></a>
             <table>
               <tr>
                 <td><%= link_to 'Edit', edit_item_path(item) %></td>
@@ -18,10 +20,19 @@
             </table>
           </div>
         <% end %>
-        <td><%= link_to 'Show', shelf %></td>
-        <td><%= link_to 'Edit', edit_shelf_path(shelf) %></td>
-        <td><%= link_to 'Destroy', shelf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% @notebooks.where("shelf_id = ?", shelf.id).each do |item| %>
+          <div class="col-sm-3">
+            <a href="<%= notebook_path(item.id) %>"><img src="<%= item.download %>"><h5><%= item.title.truncate(27) %></h5></a>
+            <table>
+              <tr>
+                <td><%= link_to 'Edit', edit_item_path(item) %></td>
+                <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            </table>
+          </div>
+        <% end %>
       </div>
+      <hr>
     <% end %>
 
 

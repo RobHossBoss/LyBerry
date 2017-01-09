@@ -21,14 +21,10 @@
   <div class="field">
     <%= f.text_area :content ,class: 'form-control'%>
   </div>
-  <div class="field">
-    <%= f.label :notebook_id "Choose a notebook"%>
-  <%= f.select(:notebook_id, options_for_select(@notebook_options), {}, {:class => 'form-control'})%>
-  </div>
-
-
+  
   <div class="actions">
-    <%= f.submit class: "btn"%>
+  <%= hidden_field_tag(:notebook, params[:notebook]) %>
+    <%= f.submit class: "btn" %>
   </div>
 <% end %>
 </div>

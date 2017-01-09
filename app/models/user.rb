@@ -22,6 +22,7 @@ VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   end
 
   def subscribe
+    require 'mailchimp'
     mailchimp = Gibbon::API.new(Rails.application.secrets.mailchimp_api_key)
     result = mailchimp.lists.subscribe({
       :id => Rails.application.secrets.mailchimp_list_id,

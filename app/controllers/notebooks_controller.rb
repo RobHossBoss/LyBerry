@@ -31,7 +31,9 @@ class NotebooksController < ApplicationController
   def create
     @notebook = Notebook.new(notebook_params)
     @notebook.user_id = current_user.id
-    #@notebook.cover =
+    @notebook.preview = File.join(current_user.folder_path, 'previews', @notebook.title+".jpg")
+    @notebook.download = File.join(current_user.folder_download, "previews", @notebook.title+".jpg")
+    @notebook.get_cover
     respond_to do |format|
       if @notebook.save
         format.html { redirect_to "/my-library", notice: 'Notebook was successfully created.' }

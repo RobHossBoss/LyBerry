@@ -10,6 +10,7 @@ class SiteController < ApplicationController
     if logged_in?
       @shelves = Shelf.where("user_id = ?", current_user.id)
       @items = Item.where("user_id = ?", current_user.id)
+      @notebooks = Notebook.where("user_id = ?", current_user.id)
       @notes = Note.where("user_id = ?", current_user.id)
 
       render 'library'

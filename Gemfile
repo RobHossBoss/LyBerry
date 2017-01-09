@@ -35,8 +35,7 @@ gem 'libreconv'
 gem 'rmagick', '~> 2.15', '>= 2.15.4'
 gem "mini_magick"
 gem 'mailchimp-api', require: 'mailchimp'
-
-gem 'grim', '~> 1.2'
+gem 'gibbon'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
