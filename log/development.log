@@ -22456,3 +22456,35 @@ Processing by NotebooksController#show as HTML
 Completed 200 OK in 353ms (Views: 341.7ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/" for ::1 at 2017-01-10 09:30:18 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (13.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by SiteController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Redirected to http://localhost:3000/my-library
+Completed 302 Found in 125ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/my-library" for ::1 at 2017-01-10 09:30:19 -0500
+Processing by SiteController#library as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering site/library.html.erb within layouts/application
+  [1m[36mShelf Load (1.6ms)[0m  [1m[34mSELECT `shelves`.* FROM `shelves` WHERE (user_id = 1)[0m
+  [1m[36mItem Load (3.9ms)[0m  [1m[34mSELECT `items`.* FROM `items` WHERE (user_id = 1) AND (shelf_id = 1)[0m
+  [1m[36mNotebook Load (14.3ms)[0m  [1m[34mSELECT `notebooks`.* FROM `notebooks` WHERE (user_id = 1) AND (shelf_id = 1)[0m
+  Rendered site/library.html.erb within layouts/application (136.5ms)
+  Rendered layouts/_header.html.erb (2.7ms)
+Completed 200 OK in 1622ms (Views: 1529.3ms | ActiveRecord: 25.7ms)
+
+
+Started GET "/notebooks/1" for ::1 at 2017-01-10 09:30:26 -0500
+Processing by NotebooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNotebook Load (28.5ms)[0m  [1m[34mSELECT  `notebooks`.* FROM `notebooks` WHERE `notebooks`.`id` = 1 LIMIT 1[0m
+  Rendering notebooks/show.html.erb within layouts/application
+  [1m[36mNote Load (6.3ms)[0m  [1m[34mSELECT `notes`.* FROM `notes` WHERE (notebook_id = 1)[0m
+  Rendered notebooks/show.html.erb within layouts/application (101.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_header.html.erb (3.9ms)
+Completed 200 OK in 491ms (Views: 413.6ms | ActiveRecord: 40.2ms)
+
+
