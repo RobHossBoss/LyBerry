@@ -18,6 +18,35 @@ class Item < ApplicationRecord
     }
   end
   
+  def merge_pdf(file_array)
+    # needs revision
+      require 'combine_pdf'
+      pdf = CombinePDF.new
+      file_array.each do |file|
+        pdf << CombinePDF.load(file) # one way to combine, very fast.
+      end
+      pdf.number_pages
+      pdf.save self.file
+  end
+  
+  def split_pdf
+    require 'combine_pdf'
+    pages = CombinePDF.load(self.file).pages;
+    i = 0
+    pages.each do |page|
+       pdf = CombinePDF.new
+       pdf << page
+       pdf.save("#{i}.pdf")
+       i+=1
+    end
+  end
+  
+  def image_to_pdf
+    require 'rmagick'
+    jpg = Magick::ImageList.new(self.file)
+    jpg.write(self.file+".jpg")
+  end
+  
   def get_pdf_preview(width)
     #require 'RMagick'
     #Magick.limit_resource("memory", 20)

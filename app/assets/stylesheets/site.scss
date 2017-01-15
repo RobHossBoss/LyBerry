@@ -50,7 +50,7 @@ footer .demo a {
   border-radius: 50%;
   height: 60px;
   width: 60px;
-  background-color: #3F51B5;
+  background-color: #F50057;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -73,7 +73,7 @@ footer .demo a {
 }
 .circle:hover, .circle:focus {
   cursor: pointer;
-  background-color: #606fc7;
+  background-color: #C2185B;
   box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.3);
 }
 .circle:focus ~ .subs button:nth-of-type(1) {
@@ -108,7 +108,7 @@ footer .demo a {
 .sub-circle {
   z-index: 0;
   position: absolute;
-  background-color: #F50057;
+  background-color: #00E676;
   height: 40px;
   width: 40px;
   border-radius: 50%;
@@ -121,7 +121,7 @@ footer .demo a {
 }
 .sub-circle:hover {
   cursor: pointer;
-  background-color: #606fc7;
+  background-color: #00C853;
   box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.3);
 }
 

@@ -1,7 +1,10 @@
 <header class="navbar navbar-fixed-top">
   <div class="container">
     <nav>
+      <a class="navbar-left" href="/my-library"><img height="40px" style="margin-top:5px" src="/logo.png"></a>
       <ul class="nav navbar-nav navbar-right">
+        
+
         <% if logged_in? %>
           <li><%= link_to "My Library", '/my-library' %></li>
           <li class="dropdown">
