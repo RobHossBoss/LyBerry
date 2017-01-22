@@ -1,60 +1,65 @@
+<%= render 'layouts/sidebar'%>
+
 <div class="container">
-<p id="notice"><%= notice %></p>
-
-
-    <% @shelves.each do |shelf| %>
-      <div class="row">
-        <h1><%= shelf.title %></h1>
-        <td><%= link_to 'Show', shelf %></td>
-        <td><%= link_to 'Edit', edit_shelf_path(shelf) %></td>
-        <td><%= link_to 'Destroy', shelf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <p><%= shelf.description %></p>
-        <% @items.where("shelf_id = ?", shelf.id).each do |item| %>
-          <div class="col-sm-3">
-            <a href="<%= item.download %>"><img src="<%= item.preview %>"><h5><%= item.title.truncate(27) %></h5></a>
-            <table>
-              <tr>
-                <td><%= link_to 'Edit', edit_item_path(item) %></td>
-                <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              </tr>
-            </table>
-          </div>
-        <% end %>
-        <% @notebooks.where("shelf_id = ?", shelf.id).each do |item| %>
-          <div class="col-sm-3">
-            <a href="<%= notebook_path(item.id) %>"><img src="<%= item.download %>"><h5><%= item.title.truncate(27) %></h5></a>
-            <table>
-              <tr>
-                <td><%= link_to 'Edit', edit_item_path(item) %></td>
-                <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              </tr>
-            </table>
-          </div>
-        <% end %>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <p id="notice"><%= notice %></p>
+      
+      
+          <% @shelves.each do |shelf| %>
+            <div class="row">
+              <h1><%= shelf.title %></h1>
+              <td><%= link_to 'Show', shelf %></td>
+              <td><%= link_to 'Edit', edit_shelf_path(shelf) %></td>
+              <td><%= link_to 'Destroy', shelf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <p><%= shelf.description %></p>
+              <% @items.where("shelf_id = ?", shelf.id).each do |item| %>
+                <div class="col-sm-3">
+                  <a href="<%= item.download %>"><img src="<%= item.preview %>"><h5><%= item.title.truncate(27) %></h5></a>
+                  <table>
+                    <tr>
+                      <td><%= link_to 'Edit', edit_item_path(item) %></td>
+                      <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    </tr>
+                  </table>
+                </div>
+              <% end %>
+              <% @notebooks.where("shelf_id = ?", shelf.id).each do |item| %>
+                <div class="col-sm-3">
+                  <a href="<%= notebook_path(item.id) %>"><img src="<%= item.download %>"><h5><%= item.title.truncate(27) %></h5></a>
+                  <table>
+                    <tr>
+                      <td><%= link_to 'Edit', edit_item_path(item) %></td>
+                      <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    </tr>
+                  </table>
+                </div>
+              <% end %>
+            </div>
+            <hr>
+          <% end %>
+      
+      
+      
+      
+    </div>
+  </div>
+  <div class="wrapper">
+        <button class="circle">
+           <img src="https://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/2x/btw_ic_speeddial_white_24dp_2x.png" alt="" />
+        </button>
+        <div class="subs">
+          
+          <button data-toggle="tooltip" title="New File" onclick="location.href='<%= new_item_path %>';" class="sub-circle"><i class="material-icons" style="color:#fff;">publish</i></button>
+          <button data-toggle="tooltip" title="New Notebook" data-placement="auto" onclick="location.href='<%= new_notebook_path %>';" class="sub-circle"><i class="material-icons" style="color:#fff;">book</i></button>
+          <button data-toggle="tooltip" title="New Shelf" data-placement="auto" onclick="location.href='<%= new_shelf_path %>';"class="sub-circle"><i class="material-icons" style="color:#fff;">dehaze</i></button>
+         </div>
       </div>
-      <hr>
-    <% end %>
-
-
-
-<div class="wrapper">
-  <button class="circle">
-     <img src="https://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/2x/btw_ic_speeddial_white_24dp_2x.png" alt="" />
-  </button>
-  <div class="subs">
-    
-    <button data-toggle="tooltip" title="New File" onclick="location.href='<%= new_item_path %>';" class="sub-circle"><i class="material-icons" style="color:#fff;">publish</i></button>
-    <button data-toggle="tooltip" title="New Notebook" data-placement="auto" onclick="location.href='<%= new_notebook_path %>';" class="sub-circle"><i class="material-icons" style="color:#fff;">book</i></button>
-    <button data-toggle="tooltip" title="New Shelf" data-placement="auto" onclick="location.href='<%= new_shelf_path %>';"class="sub-circle"><i class="material-icons" style="color:#fff;">dehaze</i></button>
-   </div>
+      
+      <script>
+      $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip();
+      });
+      </script>
 </div>
-
-<script>
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
-});
-</script>
-
-</div>
-
 
